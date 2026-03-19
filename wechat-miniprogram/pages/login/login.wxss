@@ -1,0 +1,37 @@
+.login-header {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.input {
+  height: 40px;
+}
+
+.code-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-code {
+  color: var(--primary-color);
+  font-size: 14px;
+  padding-left: 15px;
+  border-left: 1px solid var(--border-color);
+}
+
+.login-btn {
+  margin-top: 40px;
+}

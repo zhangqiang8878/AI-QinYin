@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="login-header">
+    <text class="title">登录 / 注册</text>
+  </view>
+  
+  <view class="form-group">
+    <input class="input" type="number" placeholder="请输入手机号" bindinput="onInputPhone" value="{{phone}}" maxlength="11" />
+  </view>
+
+  <view class="form-group code-group">
+    <input class="input" type="number" placeholder="请输入验证码" bindinput="onInputCode" value="{{code}}" maxlength="6" />
+    <view class="btn-code" bindtap="onSendCode">{{countdown > 0 ? countdown + 's' : '获取验证码'}}</view>
+  </view>
+
+  <view class="btn-primary login-btn" bindtap="onLogin">登录</view>
+</view>

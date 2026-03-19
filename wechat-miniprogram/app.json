@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/generate/generate",
     "pages/history/history",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
