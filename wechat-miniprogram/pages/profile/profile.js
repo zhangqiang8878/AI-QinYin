@@ -42,5 +42,17 @@ Page({
   onLogout() {
     getApp().clearToken();
     this.setData({ isLoggedIn: false, userInfo: null });
+  },
+
+  onNavigateToVoices() {
+    wx.navigateTo({ url: '/pages/voices/voices' });
+  },
+
+  onNavigateToOrders() {
+    wx.navigateTo({ url: '/pages/orders/orders' });
+  },
+
+  onNavigateToAbout() {
+    wx.navigateTo({ url: '/pages/about/about' });
   }
 });
