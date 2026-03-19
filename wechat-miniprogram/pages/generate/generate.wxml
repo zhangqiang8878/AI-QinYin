@@ -1,0 +1,6 @@
+<view class="container">
+  <text class="title">生成胎教内容</text>
+  <view class="card">
+    <text>步骤 {{currentStep}}/3</text>
+  </view>
+</view>

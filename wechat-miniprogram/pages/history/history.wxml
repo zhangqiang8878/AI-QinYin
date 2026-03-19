@@ -1,0 +1,6 @@
+<view class="container">
+  <text class="title">历史记录</text>
+  <view class="card" wx:for="{{historyList}}" wx:key="id">
+    <text>{{item.title}} - {{item.duration}}</text>
+  </view>
+</view>

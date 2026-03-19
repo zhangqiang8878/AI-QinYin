@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="card profile-header">
+    <view wx:if="{{isLoggedIn}}">
+      <text class="nickname">{{userInfo.nickname}}</text>
+      <text class="phone">{{userInfo.phone}}</text>
+      <view class="btn-secondary" bindtap="onLogout">退出登录</view>
+    </view>
+    <view wx:else>
+      <view class="btn-primary" bindtap="onLogin">去登录</view>
+    </view>
+  </view>
+  
+  <view class="card" wx:if="{{isLoggedIn}}">
+    <text>积分余额: {{credits}}</text>
+    <text>当前套餐: {{subscription ? subscription.name : '无'}}</text>
+  </view>
+</view>

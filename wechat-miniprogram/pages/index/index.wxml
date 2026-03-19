@@ -1,0 +1,35 @@
+<view class="container">
+  <!-- 欢迎区 -->
+  <view class="welcome-section">
+    <text class="welcome-title">AI亲音</text>
+    <text class="welcome-subtitle">用爸爸的声音，陪伴宝宝成长</text>
+  </view>
+
+  <!-- 快速生成入口 -->
+  <view class="quick-generate card" bindtap="onNavigateToGenerate">
+    <text class="section-title">开始生成</text>
+    <text class="section-desc">用您的声音为宝宝定制专属胎教内容</text>
+  </view>
+
+  <!-- 胎教知识 -->
+  <view class="section">
+    <text class="section-header">胎教知识</text>
+    <view class="knowledge-list">
+      <view class="knowledge-item card" wx:for="{{knowledgeList}}" wx:key="id">
+        <text class="knowledge-title">{{item.title}}</text>
+        <text class="knowledge-summary">{{item.summary}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 推荐内容 -->
+  <view class="section">
+    <text class="section-header">推荐内容</text>
+    <view class="content-list">
+      <view class="content-item card" wx:for="{{recommendedContent}}" wx:key="id">
+        <text class="content-title">{{item.title}}</text>
+        <text class="content-duration">{{item.duration}}</text>
+      </view>
+    </view>
+  </view>
+</view>
