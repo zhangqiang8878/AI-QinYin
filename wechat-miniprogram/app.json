@@ -4,7 +4,8 @@
     "pages/generate/generate",
     "pages/history/history",
     "pages/profile/profile",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/audio/audio"
   ],
   "window": {
     "backgroundTextStyle": "light",

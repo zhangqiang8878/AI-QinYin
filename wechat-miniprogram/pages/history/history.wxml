@@ -1,6 +1,8 @@
 <view class="container">
   <text class="title">历史记录</text>
-  <view class="card" wx:for="{{historyList}}" wx:key="id">
-    <text>{{item.title}} - {{item.duration}}</text>
+  <view class="card" wx:for="{{historyList}}" wx:key="id" bindtap="onPlay" data-id="{{item.id}}">
+    <text>{{item.title}} - {{item.duration ? item.duration + '秒' : '生成中...'}}</text>
   </view>
+  <view wx:if="{{loading}}" class="loading-text">加载中...</view>
+  <view wx:if="{{!hasMore && historyList.length > 0}}" class="loading-text">没有更多了</view>
 </view>
