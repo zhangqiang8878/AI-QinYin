@@ -1,17 +1,50 @@
 <view class="container">
   <view class="card profile-header">
-    <view wx:if="{{isLoggedIn}}">
-      <text class="nickname">{{userInfo.nickname}}</text>
-      <text class="phone">{{userInfo.phone}}</text>
-      <view class="btn-secondary" bindtap="onLogout">退出登录</view>
+    <view wx:if="{{isLoggedIn}}" class="user-info-section">
+      <view class="avatar-nickname">
+        <image class="avatar" src="{{userInfo.avatar_url || '/images/default-avatar.png'}}"></image>
+        <view class="info-text">
+          <text class="nickname">{{userInfo.nickname}}</text>
+          <text class="phone">{{userInfo.phone}}</text>
+        </view>
+      </view>
+      <view class="btn-secondary logout-btn" bindtap="onLogout">退出登录</view>
     </view>
-    <view wx:else>
-      <view class="btn-primary" bindtap="onLogin">去登录</view>
+    <view wx:else class="login-section">
+      <text class="welcome-text">欢迎使用AI亲音</text>
+      <view class="btn-primary login-btn" bindtap="onLogin">去登录</view>
     </view>
   </view>
   
   <view class="card" wx:if="{{isLoggedIn}}">
-    <text>积分余额: {{credits}}</text>
-    <text>当前套餐: {{subscription ? subscription.name : '无'}}</text>
+    <view class="section-title">我的资产</view>
+    <view class="asset-item">
+      <text class="asset-label">积分余额:</text>
+      <text class="asset-value">{{credits}} 点</text>
+    </view>
+    <view class="asset-item">
+      <text class="asset-label">当前套餐:</text>
+      <text class="asset-value">{{subscription ? subscription.tier_name : '暂无套餐'}}</text>
+    </view>
+    <view class="asset-item" wx:if="{{subscription}}">
+      <text class="asset-label">到期时间:</text>
+      <text class="asset-value">{{subscription.expires_at}}</text>
+    </view>
+  </view>
+
+  <view class="card settings-list" wx:if="{{isLoggedIn}}">
+    <view class="section-title">设置与其他</view>
+    <view class="list-item" bindtap="onNavigateToVoices">
+      <text>我的音色</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="list-item" bindtap="onNavigateToOrders">
+      <text>订单记录</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="list-item" bindtap="onNavigateToAbout">
+      <text>关于我们</text>
+      <text class="arrow">></text>
+    </view>
   </view>
 </view>

@@ -1,0 +1,100 @@
+.profile-header {
+  padding: 30px 20px;
+}
+
+.user-info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar-nickname {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #eee;
+  margin-right: 15px;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nickname {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.phone {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+.logout-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.login-btn {
+  width: 120px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.asset-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.asset-label {
+  color: var(--text-secondary);
+}
+
+.asset-value {
+  font-weight: bold;
+}
+
+.settings-list .list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.settings-list .list-item:last-child {
+  border-bottom: none;
+}
+
+.arrow {
+  color: var(--text-tertiary);
+}
