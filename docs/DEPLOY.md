@@ -123,6 +123,8 @@ cd frp
 - [ ] MongoDB已启动且可访问
 - [ ] Redis已启动且可访问
 - [ ] 后端API环境变量已配置
+  - `MONGODB_URI=mongodb://admin:password@localhost:27017/ai_qinyin`
+  - `JWT_SECRET=your_secret_key`
 - [ ] 阿里云SMS密钥已配置
 - [ ] 阿里云OSS密钥已配置
 - [ ] 微信支付密钥已配置
