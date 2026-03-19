@@ -1,0 +1,9 @@
+.worktrees/
+worktrees/
+model_cache/
+__pycache__/
+*.pyc
+.env
+node_modules/
+dist/
+build/

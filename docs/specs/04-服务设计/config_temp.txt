@@ -1,0 +1,74 @@
+from pydantic_settings import BaseSettings, SettingsConfigDict
+from functools import lru_cache
+
+
+class Settings(BaseSettings):
+    """应用配置"""
+
+    # 应用配置
+    app_name: str = "AI 亲音 API"
+    debug: bool = False
+    api_v1_prefix: str = "/api/v1"
+
+    # 数据库配置
+    mongodb_uri: str = "mongodb://localhost:27017"
+    database_name: str = "ai_qinyin"
+    redis_host: str = "localhost"
+    redis_port: int = 6379
+    redis_db: int = 0
+
+    # JWT 配置
+    jwt_secret: str = "your-secret-key-change-in-production"
+    jwt_algorithm: str = "HS256"
+    jwt_expiration_minutes: int = 60 * 24 * 7  # 7 天
+
+    # 阿里云 OSS 配置
+    oss_access_key_id: str = ""
+    oss_access_key_secret: str = ""
+    oss_bucket: str = "ai-qinyin-audio"
+    oss_region: str = "cn-hangzhou"
+    oss_endpoint: str = ""
+
+    # 阿里云 SMS 配置
+    sms_access_key_id: str = ""
+    sms_access_key_secret: str = ""
+    sms_sign_name: str = "AI 亲音"
+    sms_template_code: str = "SMS_123456789"
+
+    # 微信支付配置
+    wechat_appid: str = ""
+    wechat_mch_id: str = ""
+    wechat_api_v3_key: str = ""
+    wechat_serial_no: str = ""
+    wechat_private_key_path: str = ""
+
+    # TTS 服务配置
+    tts_service_url: str = "http://localhost:18001"
+    tts_timeout: int = 60
+
+    # FRP 配置
+    frp_token: str = ""
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore"
+    )
+
+    @property
+    def redis_url(self) -> str:
+        return f"redis://{self.redis_host}:{self.redis_port}/{self.redis_db}"
+
+    @property
+    def oss_base_url(self) -> str:
+        return f"https://{self.oss_bucket}.{self.oss_endpoint}"
+
+
+@lru_cache()
+def get_settings() -> Settings:
+    """获取配置单例"""
+    return Settings()
+
+
+settings = get_settings()
