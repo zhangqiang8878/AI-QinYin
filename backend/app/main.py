@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.database import connect_to_mongo, close_mongo_connection
-from app.api import auth, users, voices
+from app.api import auth, users, voices, contents
 
 app = FastAPI(title="AI亲音 Backend API")
 
@@ -8,6 +8,7 @@ app = FastAPI(title="AI亲音 Backend API")
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
 app.include_router(users.router, prefix="/api/users", tags=["users"])
 app.include_router(voices.router, prefix="/api/voices", tags=["voices"])
+app.include_router(contents.router, prefix="/api/contents", tags=["contents"])
 
 @app.get("/health")
 async def health_check():
