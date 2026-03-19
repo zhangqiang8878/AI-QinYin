@@ -62,6 +62,15 @@ volumes:
 
 #### 1.3 部署后端API
 
+我们提供了 `docker-compose.yml` 来一键启动 MongoDB、Redis 和 FastAPI 后端服务。
+
+```bash
+# 在项目根目录下执行
+docker-compose up -d --build
+```
+
+或者如果您只想单独部署后端服务，可以使用以下命令：
+
 ```bash
 cd backend
 docker build -t ai-qinyin-backend .
