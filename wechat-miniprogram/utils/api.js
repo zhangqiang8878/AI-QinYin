@@ -50,6 +50,7 @@ module.exports = {
   // 支付相关
   getCredits: () => request({ url: '/users/credits' }),
   getSubscriptions: () => request({ url: '/subscriptions' }),
+  getMySubscription: () => request({ url: '/subscriptions/my' }),
   createOrder: (data) => request({ url: '/payments/orders', method: 'POST', data }),
 
   request

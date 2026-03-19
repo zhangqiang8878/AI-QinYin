@@ -6,7 +6,7 @@ Page({
     isLoggedIn: false
   },
 
-  onLoad() {
+  onShow() {
     this.checkLoginStatus();
   },
 
@@ -18,12 +18,21 @@ Page({
     }
   },
 
-  loadUserData() {
-    this.setData({
-      userInfo: { nickname: '准妈妈', phone: '138****8000' },
-      credits: 100,
-      subscription: { name: '月度套餐', expireDate: '2026-04-18' }
-    });
+  async loadUserData() {
+    try {
+      const api = require('../../utils/api');
+      const userInfo = await api.getUserInfo();
+      const creditsRes = await api.getCredits();
+      const subRes = await api.getMySubscription();
+
+      this.setData({
+        userInfo: userInfo,
+        credits: creditsRes.credits,
+        subscription: subRes
+      });
+    } catch (e) {
+      console.error('Load profile failed:', e);
+    }
   },
 
   onLogin() {
